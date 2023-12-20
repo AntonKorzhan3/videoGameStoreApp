@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-function App() {
+import Main from "./components/Main";
+import VideoGameList from "./components/VideoGameList";
+import OrdersList from "./components/OrdersList";
+import OrderItemList from "./components/OrderItemList";
+import EditVideoGames from "./components/EditVideoGames";
+import EditOrders from "./components/EditOrders";
+import EditOrderItems from "./components/EditOrderItems";
+import NewVideoGame from "./components/NewVideoGames";
+import NewOrders from "./components/NewOrders";
+import NewOrderItems from "./components/NewOrderItems";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/videoGameList" element={<VideoGameList />} />
+        <Route path="/ordersList" element={<OrdersList />} />
+        <Route path="/orderItemsList" element={<OrderItemList />} />
+        <Route path="/editVideoGames/:id" element={<EditVideoGames />} />
+        <Route path="/editOrders/:id" element={<EditOrders />} />
+        <Route path="/editOrderItems/:id" element={<EditOrderItems />} />
+        <Route path="/newVideoGames" element={<NewVideoGame />} />
+        <Route path="/newOrders" element={<NewOrders />} />
+        <Route path="/newOrderItems" element={<NewOrderItems />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
-
+};
 export default App;
