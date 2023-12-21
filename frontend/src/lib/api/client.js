@@ -7,7 +7,7 @@ const options = {
 
 const client = applyCaseMiddleware(
   axios.create({
-    baseURL: "http://localhost:4000",
+    baseURL: "http://ec2-3-81-122-157.compute-1.amazonaws.com",
   }),
   options
 );
